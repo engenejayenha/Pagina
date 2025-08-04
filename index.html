@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desarrollo Web Espacial - CTP de Aserrí</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <canvas id="starfield"></canvas>
+
+  <header>
+    <img src="img/unnamed.png" alt="Logo del CTP de Aserrí" class="logo">
+    <h1>¡Explora el universo del Desarrollo Web!</h1>
+    <p class="subtitulo">Feria de Especialidades Técnicas 2025</p>
+    <button id="btnInfoTecnica">🔍 Ver diseño técnico</button>
+    <button onclick="mostrarDisenoUI()">🧩 ¿Cómo fue diseñada esta interfaz?</button>
+  </header>
+
+  <main>
+    <section class="galaxia">
+      <h2>¿Qué aprenderás en nuestra especialidad?</h2>
+      <div class="contenedor-cards">
+        <div class="card"><h3>HTML5</h3><p>Construye la estructura de páginas web.</p></div>
+        <div class="card"><h3>CSS3</h3><p>Estiliza con efectos visuales sorprendentes.</p></div>
+        <div class="card tooltip"><h3>JavaScript</h3><p>Agrega interacción y dinamismo galáctico.</p></div>
+        <div class="card"><h3>Diseño Responsivo</h3><p>Adapta tus sitios a cualquier planeta... o dispositivo.</p></div>
+      </div>
+    </section>
+
+    <!-- Modal diseño técnico -->
+    <div id="modalInfo" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h2>Diseño Técnico del Sitio</h2>
+        <ul>
+          <li><strong>Estructura (HTML):</strong> secciones, tarjetas, header, footer.</li>
+          <li><strong>Estilo (CSS):</strong> colores, animaciones, responsividad.</li>
+          <li><strong>Interacción (JS):</strong> juego, efectos, movimiento de estrellas.</li>
+          <li><strong>Multimedia:</strong> sonido de fondo, imágenes, QR.</li>
+          <li><strong>Componentes reutilizables:</strong> tarjetas de planetas, controles del juego.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal diseño UI -->
+    <div id="modalDisenoUI" class="modal">
+      <div class="modal-contenido">
+        <h3>Etapas del diseño de la interfaz</h3>
+        <ul>
+          <li><strong>1. Análisis del usuario:</strong> ¿Quién lo va a usar?</li>
+          <li><strong>2. Modelado de tareas:</strong> Qué acciones realizará.</li>
+          <li><strong>3. Estructura visual:</strong> Layout de secciones.</li>
+          <li><strong>4. Prototipado:</strong> Bocetos previos antes del código.</li>
+          <li><strong>5. Implementación:</strong> Uso de HTML, CSS, JS.</li>
+          <li><strong>6. Pruebas de usabilidad:</strong> Claridad, accesibilidad, estética.</li>
+        </ul>
+        <button onclick="cerrarDisenoUI()">Cerrar</button>
+      </div>
+    </div>
+
+    <main>
+    <section class="game-section">
+      <h2>🎮 Recolecta los Códigos Perdidos</h2>
+      <p>Mueve tu nave y atrapa solo los fragmentos correctos de código web.</p>
+      <div id="gameInfo">
+        <div id="score">Puntos: 0</div>
+        <div id="lives">Vidas: ❤️❤️❤️</div>
+        <div id="timer">Tiempo: 60s</div>
+      </div>
+      <div id="gameArea">
+        <div id="player"></div>
+      </div>
+      <button id="restartBtn" style="display:none;">🔁 Reiniciar Juego</button>
+    </section>
+  </main>
+
+
+    <!-- Juego: Atrapa las Estrellas -->
+    <section class="game-section">
+      <h2>🌠 MiniJuego: Atrapa las Estrellas del Conocimiento</h2>
+      <p>Haz clic en las estrellas antes de que desaparezcan. ¡Aprovecha los 30 segundos!</p>
+      <div id="estrellaGameArea"></div>
+      <div class="estrella-panel">
+        <span id="estrellaPuntos">Puntos: 0</span>
+        <span id="estrellaTiempo">Tiempo: 30s</span>
+      </div>
+      <button id="reiniciarEstrellas" style="display:none;">🔁 Reiniciar MiniJuego</button>
+    </section>
+
+    <!-- Galería -->
+    <section class="galeria">
+      <h2>Proyectos Espaciales</h2>
+      <div class="contenedor-proyectos">
+        <div class="proyecto"><img src="proyecto1.jpg" alt="Landing de una nave"><h3>Landing de una nave</h3></div>
+        <div class="proyecto"><img src="proyecto2.jpg" alt="Blog del universo"><h3>Blog del universo</h3></div>
+        <div class="proyecto"><img src="proyecto3.jpg" alt="Tienda espacial"><h3>Tienda espacial</h3></div>
+      </div>
+      <p>Escanea el código para más información:</p>
+      <img src="qr_ctpaserri.png" alt="Código QR de contacto" class="qr">
+    </section>
+
+    <!-- Patrones -->
+    <section class="patrones">
+      <h2>🌌 Diseño con Patrones</h2>
+      <ul>
+        <li>🛠 <strong>Creacional:</strong> Creamos estrellas dinámicamente.</li>
+        <li>🏗 <strong>Estructural:</strong> Tarjetas con estructura común.</li>
+        <li>🎮 <strong>Conductual:</strong> El juego responde a tus acciones.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>CTP de Aserrí - Especialidad Desarrollo Web 🚀</p>
+  </footer>
+
+  <audio id="bgm" src="/audio/espacio.mp3" loop autoplay></audio>
+  <script src="script.js"></script>
+</body>
+</html>

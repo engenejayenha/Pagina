@@ -1,0 +1,345 @@
+/* -------------------- Reset General -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #050517;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* -------------------- Fondo Estrellado -------------------- */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* -------------------- Encabezado -------------------- */
+header {
+  background: #0e0f2c;
+  text-align: center;
+  padding: 2em 1em;
+  border-bottom: 2px solid #222;
+}
+.logo {
+  width: 90px;
+  margin-bottom: 1em;
+}
+h1 {
+  font-size: 2.4em;
+  color: #ffe;
+}
+.subtitulo {
+  font-size: 1.2em;
+  color: #bbb8ff;
+  margin-bottom: 1em;
+}
+header button {
+  background: #5e33c9;
+  color: white;
+  border: none;
+  padding: 0.7em 1.2em;
+  margin: 0.3em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+header button:hover {
+  background: #7e59e3;
+}
+
+/* -------------------- Sección Galaxia -------------------- */
+.galaxia {
+  padding: 2em 1em;
+}
+.galaxia h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #ffe066;
+  margin-bottom: 1.5em;
+}
+.contenedor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+}
+.card {
+  background: #1e1e3a;
+  border-radius: 10px;
+  padding: 1em;
+  width: 240px;
+  text-align: center;
+  box-shadow: 0 0 10px #4d5dff;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card h3 {
+  font-size: 1.4em;
+  color: #79f2ff;
+}
+.card p {
+  color: #d6e0ff;
+}
+.tooltip-text {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  background: #333;
+  color: white;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+/* -------------------- Modales -------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10;
+  overflow: auto;
+}
+.modal-contenido {
+  background: #27295e;
+  margin: 10% auto;
+  padding: 2em;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  color: #fff;
+  position: relative;
+}
+.cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.cerrar:hover {
+  color: #fff;
+}
+#modalDisenoUI {
+  background: #5a2cd6;
+  padding: 1em;
+  max-width: 400px;
+  border-radius: 10px;
+  color: white;
+  margin: 2em auto;
+  display: none;
+}
+
+/* -------------------- Juegos -------------------- */
+.game-section {
+  background: #13152f;
+  padding: 2em 1em;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  text-align: center;
+}
+#gameArea {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: #212343;
+  margin: 1.5em auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #444;
+}
+#player {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #00cfff;
+  bottom: 20px;
+  left: 280px;
+  border-radius: 5px;
+}
+.code, .star {
+  position: absolute;
+  padding: 0.4em 0.7em;
+  font-weight: bold;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+.code {
+  background: #ff6347;
+  color: white;
+}
+.star {
+  background: gold;
+  color: black;
+}
+#gameInfo {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
+  color: white;
+}
+#score, #lives, #timer {
+  padding: 0.5em 1em;
+  background: #2a2d5f;
+  border-radius: 6px;
+}
+#restartBtn {
+  margin-top: 1em;
+  padding: 0.8em 1.2em;
+  background: #ff4081;
+  border: none;
+  color: white;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#restartBtn:hover {
+  background: #ff5c94;
+}
+
+/* -------------------- Mini Juego Estrellas -------------------- */
+#estrellaGameArea {
+  width: 600px;
+  height: 300px;
+  background: #1b1d3c;
+  margin: 1em auto;
+  border: 3px solid #555;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+#reiniciarEstrellas {
+  display: block;
+  margin: 1em auto;
+  padding: 0.7em 1.2em;
+  background: #ffc107;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.estrella {
+  width: 30px;
+  height: 30px;
+  background: gold;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  box-shadow: 0 0 10px #fff;
+  animation: sparkle 1s infinite;
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.estrella-panel {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+/* -------------------- Galería -------------------- */
+.galeria {
+  padding: 2em 1em;
+  text-align: center;
+}
+.contenedor-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+}
+.proyecto {
+  width: 200px;
+  background: #1e1e3f;
+  border-radius: 10px;
+  padding: 1em;
+  transition: transform 0.3s ease;
+  color: #eee;
+}
+.proyecto:hover {
+  transform: translateY(-5px);
+}
+.proyecto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5em;
+}
+.qr {
+  width: 120px;
+  margin-top: 1em;
+}
+
+/* -------------------- Patrones -------------------- */
+.patrones {
+  padding: 2em 1em;
+  background: #1a1c4f;
+}
+.patrones h2 {
+  text-align: center;
+  color: #f5a623;
+  margin-bottom: 1em;
+}
+.patrones ul {
+  list-style: none;
+}
+.patrones li {
+  margin-bottom: 0.8em;
+  font-size: 1.1em;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background: #101228;
+  color: #aaa;
+  text-align: center;
+  padding: 1em;
+  border-top: 2px solid #333;
+}
+
+
+#gameArea {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: #212343;
+  margin: 1.5em auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #444;
+}
+#player {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #00cfff;
+  border-radius: 5px;
+}
+.code, .star {
+  position: absolute;
+  padding: 0.4em 0.7em;
+  font-weight: bold;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+.code {
+  background: #ff6347;
+  color: white;
+}
+.star {
+  background: gold;
+  color: black;
+}
